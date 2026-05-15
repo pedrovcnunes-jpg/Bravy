@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bravy × ONR</title>
+<title>Bravy × ONR · Comunicação & Marketing</title>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -12,11 +12,11 @@
   --bg: #03060A;
   --bg2: #070D14;
   --bg3: #0C1520;
-  --bg4: #111E2A;
   --blue: #0066FF;
-  --blue2: #0044CC;
   --cyan: #00C8FF;
   --green: #00FF88;
+  --yellow: #FFD700;
+  --red: #FF4466;
   --text: #8AA4BE;
   --white: #EDF4FF;
   --muted: #3A5068;
@@ -32,16 +32,13 @@ body {
   overflow-x: hidden;
 }
 
-/* ── GRID BG ── */
 .grid-bg {
-  position: fixed;
-  inset: 0;
+  position: fixed; inset: 0;
   background-image:
     linear-gradient(rgba(0,102,255,0.025) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0,102,255,0.025) 1px, transparent 1px);
   background-size: 48px 48px;
-  pointer-events: none;
-  z-index: 0;
+  pointer-events: none; z-index: 0;
 }
 
 /* ── HERO ── */
@@ -50,746 +47,567 @@ body {
   padding: 0 8%;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  position: relative;
-  z-index: 1;
-  overflow: hidden;
+  position: relative; z-index: 1; overflow: hidden;
 }
 
 .hero-glow {
-  position: absolute;
-  top: -30%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80vw;
-  height: 80vw;
+  position: absolute; top: -30%; left: 50%; transform: translateX(-50%);
+  width: 80vw; height: 80vw;
   background: radial-gradient(ellipse, rgba(0,102,255,0.07) 0%, transparent 65%);
   pointer-events: none;
 }
 
 nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 28px 0;
-  border-bottom: 1px solid var(--border);
-  position: relative;
-  z-index: 10;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 28px 0; border-bottom: 1px solid var(--border);
+  position: relative; z-index: 10;
 }
 
-.logo {
-  font-family: 'Space Grotesk', sans-serif;
-  font-weight: 700;
-  font-size: 16px;
-  letter-spacing: 5px;
-  color: var(--blue);
-  text-transform: uppercase;
-}
+.logo { font-weight: 700; font-size: 16px; letter-spacing: 5px; color: var(--blue); text-transform: uppercase; }
 
 .nav-badge {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  border: 1px solid var(--border);
-  font-size: 10px;
-  letter-spacing: 3px;
-  color: var(--muted);
-  text-transform: uppercase;
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 16px; border: 1px solid var(--border);
+  font-size: 10px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase;
 }
-
-.nav-badge::before {
-  content: '';
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--blue);
-  box-shadow: 0 0 8px var(--blue);
-}
+.nav-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 8px var(--blue); }
 
 .hero-content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 80px 0;
-  position: relative;
-  z-index: 10;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 80px 0; position: relative; z-index: 10; max-width: 700px;
 }
 
 .hero-label {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 32px;
-  opacity: 0;
-  animation: fadeUp 0.7s 0.2s forwards;
+  display: flex; align-items: center; gap: 14px; margin-bottom: 32px;
+  opacity: 0; animation: fadeUp 0.7s 0.2s forwards;
 }
-
 .label-line { width: 32px; height: 1px; background: var(--blue); }
-.label-text {
-  font-size: 10px;
-  letter-spacing: 4px;
-  color: var(--blue);
-  text-transform: uppercase;
-}
+.label-text { font-size: 10px; letter-spacing: 4px; color: var(--blue); text-transform: uppercase; }
 
 .hero h1 {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(48px, 7vw, 96px);
-  font-weight: 300;
-  color: var(--white);
-  line-height: 1.05;
-  margin-bottom: 32px;
-  opacity: 0;
-  animation: fadeUp 0.7s 0.4s forwards;
+  font-family: 'Fraunces', serif; font-size: clamp(44px, 6vw, 84px);
+  font-weight: 300; color: var(--white); line-height: 1.06; margin-bottom: 28px;
+  opacity: 0; animation: fadeUp 0.7s 0.4s forwards;
 }
-
 .hero h1 em {
   font-style: italic;
   background: linear-gradient(90deg, var(--blue), var(--cyan));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
 
 .hero-desc {
-  max-width: 580px;
-  font-size: 15px;
-  line-height: 1.9;
-  color: var(--text);
-  margin-bottom: 48px;
-  opacity: 0;
-  animation: fadeUp 0.7s 0.6s forwards;
+  font-size: 15px; line-height: 1.9; color: var(--text); margin-bottom: 40px;
+  opacity: 0; animation: fadeUp 0.7s 0.6s forwards;
 }
 
-.hero-onr {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  padding: 20px 28px;
-  border: 1px solid var(--border);
-  background: rgba(0,102,255,0.04);
-  max-width: 480px;
-  opacity: 0;
-  animation: fadeUp 0.7s 0.8s forwards;
+.scope-box {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 16px 24px; border: 1px solid rgba(0,255,136,0.2);
+  background: rgba(0,255,136,0.04);
+  opacity: 0; animation: fadeUp 0.7s 0.8s forwards;
 }
-
-.onr-icon {
-  width: 48px; height: 48px;
-  background: rgba(0,102,255,0.1);
-  border: 1px solid var(--border);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 20px;
-  flex-shrink: 0;
-}
-
-.onr-info {}
-.onr-label { font-size: 9px; letter-spacing: 3px; color: var(--muted); text-transform: uppercase; margin-bottom: 4px; }
-.onr-name { font-size: 14px; font-weight: 600; color: var(--white); }
-.onr-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.scope-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); box-shadow: 0 0 10px var(--green); flex-shrink: 0; }
+.scope-text { font-size: 12px; color: rgba(0,255,136,0.7); letter-spacing: 1px; line-height: 1.5; }
 
 .hero-bottom {
-  padding: 24px 0;
-  border-top: 1px solid var(--border);
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  position: relative;
-  z-index: 10;
-  opacity: 0;
-  animation: fadeUp 0.7s 1s forwards;
+  padding: 24px 0; border-top: 1px solid var(--border);
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  position: relative; z-index: 10;
+  opacity: 0; animation: fadeUp 0.7s 1s forwards;
 }
-
-.hero-stat {}
-.hero-stat-num {
-  font-family: 'Fraunces', serif;
-  font-size: 32px;
-  color: var(--blue);
-  line-height: 1;
-  margin-bottom: 4px;
-}
-.hero-stat-label {
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: var(--muted);
-  text-transform: uppercase;
-}
+.h-stat-num { font-family: 'Fraunces', serif; font-size: 32px; color: var(--blue); line-height: 1; margin-bottom: 4px; }
+.h-stat-label { font-size: 10px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; }
 
 /* ── SECTIONS ── */
-section {
-  padding: 96px 8%;
-  position: relative;
-  z-index: 1;
-}
+section { padding: 96px 8%; position: relative; z-index: 1; }
 
 .s-tag {
-  font-size: 10px;
-  letter-spacing: 5px;
-  color: var(--blue);
-  text-transform: uppercase;
-  margin-bottom: 12px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
+  font-size: 10px; letter-spacing: 5px; color: var(--blue); text-transform: uppercase;
+  margin-bottom: 12px; display: flex; align-items: center; gap: 10px;
 }
 .s-tag::before { content: ''; width: 20px; height: 1px; background: var(--blue); }
 
 .s-title {
-  font-family: 'Fraunces', serif;
-  font-size: clamp(28px, 3.5vw, 48px);
-  font-weight: 300;
-  color: var(--white);
-  line-height: 1.15;
-  margin-bottom: 56px;
+  font-family: 'Fraunces', serif; font-size: clamp(28px, 3.5vw, 46px);
+  font-weight: 300; color: var(--white); line-height: 1.15; margin-bottom: 56px;
 }
 .s-title em {
   font-style: italic;
   background: linear-gradient(90deg, var(--blue), var(--cyan));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
 
-/* ── CONTEXTO ── */
-.context { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+/* ── HOJE vs AMANHÃ ── */
+.compare { background: var(--bg2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
 
-.context-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background: var(--border);
-}
-
-@media (max-width: 768px) {
-  .context-grid { grid-template-columns: 1fr; }
-  .uso-grid { grid-template-columns: 1fr !important; }
-  .hero-bottom { grid-template-columns: 1fr; }
-}
-
-.ctx-card {
-  background: var(--bg2);
-  padding: 36px;
-  transition: background 0.3s;
-}
-.ctx-card:hover { background: var(--bg3); }
-
-.ctx-icon { font-size: 28px; margin-bottom: 16px; }
-.ctx-title { font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 8px; letter-spacing: 0.3px; }
-.ctx-text { font-size: 12px; color: var(--muted); line-height: 1.8; }
-
-/* ── USOS DO CLAUDE CODE ── */
-.uso-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2px;
-}
-
-.uso-card {
-  background: var(--bg2);
-  padding: 40px 36px;
-  border: 1px solid var(--border);
-  border-bottom: 3px solid transparent;
-  transition: border-color 0.3s, background 0.3s;
-}
-.uso-card:hover {
-  border-bottom-color: var(--blue);
-  background: var(--bg3);
-}
-
-.uso-num {
-  font-family: 'Fraunces', serif;
-  font-size: 56px;
-  color: rgba(0,102,255,0.08);
-  line-height: 1;
-  margin-bottom: 8px;
-}
-.uso-tag { font-size: 9px; letter-spacing: 4px; color: var(--blue); text-transform: uppercase; margin-bottom: 10px; font-weight: 600; }
-.uso-title { font-size: 16px; font-weight: 600; color: var(--white); margin-bottom: 12px; line-height: 1.3; }
-.uso-text { font-size: 13px; color: var(--muted); line-height: 1.8; margin-bottom: 20px; }
-
-.uso-features { list-style: none; display: flex; flex-direction: column; gap: 8px; }
-.uso-features li {
-  font-size: 12px; color: var(--text);
-  display: flex; align-items: flex-start; gap: 10px; line-height: 1.5;
-}
-.uso-features li::before {
-  content: '›';
-  color: var(--cyan);
-  flex-shrink: 0;
-  font-size: 14px;
-  margin-top: -1px;
-}
-
-/* ── DIFERENCIAL ── */
-.dif { background: var(--bg2); border-top: 1px solid var(--border); }
-
-.dif-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
+.compare-grid {
+  display: grid; grid-template-columns: 1fr 60px 1fr; gap: 0;
   align-items: start;
 }
 
-@media (max-width: 768px) { .dif-grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px) {
+  .compare-grid { grid-template-columns: 1fr; }
+  .compare-arrow { display: none; }
+  .agent-grid { grid-template-columns: 1fr !important; }
+  .hero-bottom { grid-template-columns: 1fr; }
+}
 
-.dif-left p { font-size: 14px; color: var(--text); line-height: 1.9; margin-bottom: 16px; }
-
-.compare-table { width: 100%; border-collapse: collapse; }
-.compare-table th {
-  padding: 12px 16px;
-  font-size: 10px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--muted);
-  text-align: left;
+.compare-col { padding: 0; }
+.compare-col-title {
+  font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+  padding: 16px 0; margin-bottom: 16px;
   border-bottom: 1px solid var(--border);
 }
-.compare-table td {
-  padding: 14px 16px;
-  font-size: 12px;
-  border-bottom: 1px solid rgba(0,102,255,0.05);
-  line-height: 1.5;
-}
-.compare-table tr:last-child td { border-bottom: none; }
-.compare-table td:first-child { color: var(--white); font-weight: 500; }
-.compare-table td:nth-child(2) { color: var(--muted); }
-.compare-table td:nth-child(3) { color: var(--cyan); }
+.compare-col-title.hoje { color: var(--muted); }
+.compare-col-title.amanha { color: var(--cyan); }
 
-.compare-header { background: var(--bg3); }
-.compare-header td { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); }
+.compare-arrow {
+  display: flex; align-items: flex-start; justify-content: center;
+  padding-top: 56px; font-size: 20px; color: var(--blue); opacity: 0.4;
+}
+
+.compare-item {
+  display: flex; gap: 12px; padding: 14px 0;
+  border-bottom: 1px solid rgba(0,102,255,0.05); align-items: flex-start;
+}
+.compare-item:last-child { border-bottom: none; }
+
+.ci-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+.ci-content {}
+.ci-title { font-size: 12px; font-weight: 600; color: var(--white); margin-bottom: 3px; }
+.ci-sub { font-size: 11px; color: var(--muted); line-height: 1.5; }
+
+.ci-tag {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 9px; letter-spacing: 2px; text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.ci-tag.manual { color: rgba(255,68,102,0.6); }
+.ci-tag.auto { color: var(--green); }
+.ci-tag::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: currentColor; }
+
+/* ── AGENTES ── */
+.agent-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 2px;
+}
+
+.agent-card {
+  background: var(--bg2); padding: 40px 36px;
+  border: 1px solid var(--border); border-bottom: 3px solid transparent;
+  transition: border-color 0.3s, background 0.3s;
+}
+.agent-card:hover { border-bottom-color: var(--blue); background: var(--bg3); }
+
+.agent-substitui {
+  font-size: 9px; letter-spacing: 3px; color: var(--muted);
+  text-transform: uppercase; margin-bottom: 6px;
+}
+.agent-substitui span { color: var(--cyan); }
+
+.agent-num {
+  font-family: 'Fraunces', serif; font-size: 52px;
+  color: rgba(0,102,255,0.07); line-height: 1; margin-bottom: 6px;
+}
+.agent-title { font-size: 17px; font-weight: 600; color: var(--white); margin-bottom: 10px; line-height: 1.3; }
+.agent-desc { font-size: 13px; color: var(--muted); line-height: 1.8; margin-bottom: 20px; }
+
+.agent-features { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+.agent-features li {
+  font-size: 12px; color: var(--text);
+  display: flex; align-items: flex-start; gap: 10px; line-height: 1.5;
+}
+.agent-features li::before { content: '›'; color: var(--cyan); flex-shrink: 0; font-size: 14px; margin-top: -1px; }
+
+.agent-tempo {
+  margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border);
+  display: flex; align-items: center; gap: 10px;
+}
+.tempo-label { font-size: 9px; letter-spacing: 2px; color: var(--muted); text-transform: uppercase; }
+.tempo-val { font-size: 11px; color: var(--green); font-weight: 600; }
 
 /* ── IMPACTO ── */
-.impacto-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--border);
+.impact { background: var(--bg2); border-top: 1px solid var(--border); }
+
+.impact-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; background: var(--border);
 }
 
-@media (max-width: 768px) { .impacto-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 768px) { .impact-grid { grid-template-columns: repeat(2, 1fr); } }
 
-.imp-card {
-  background: var(--bg2);
-  padding: 40px 32px;
-  text-align: center;
-}
+.imp-card { background: var(--bg2); padding: 40px 28px; text-align: center; }
 .imp-num {
-  font-family: 'Fraunces', serif;
-  font-size: 48px;
-  font-weight: 300;
+  font-family: 'Fraunces', serif; font-size: 48px; font-weight: 300;
   background: linear-gradient(135deg, var(--blue), var(--cyan));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1;
-  margin-bottom: 10px;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+  line-height: 1; margin-bottom: 10px;
 }
 .imp-label { font-size: 11px; color: var(--muted); line-height: 1.6; }
 
 /* ── MENTORIA ── */
-.steps-list { display: flex; flex-direction: column; gap: 0; margin-top: 48px; }
+.mentoria { border-top: 1px solid var(--border); }
 
-.step {
-  display: flex;
-  gap: 28px;
-  padding: 28px 0;
-  border-bottom: 1px solid rgba(0,102,255,0.06);
-  align-items: flex-start;
+.ment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+@media (max-width: 768px) { .ment-grid { grid-template-columns: 1fr; } }
+
+.ment-left p { font-size: 14px; color: var(--text); line-height: 1.9; margin-bottom: 16px; }
+
+.highlight {
+  background: rgba(0,102,255,0.06); border: 1px solid var(--border);
+  border-left: 3px solid var(--blue); padding: 20px 24px; margin-top: 20px;
 }
+.highlight p { font-size: 13px; color: rgba(0,200,255,0.7); line-height: 1.7; margin: 0 !important; }
+
+.steps { display: flex; flex-direction: column; gap: 0; }
+.step { display: flex; gap: 24px; padding: 24px 0; border-bottom: 1px solid rgba(0,102,255,0.06); align-items: flex-start; }
 .step:last-child { border-bottom: none; }
-
-.step-num {
-  width: 44px; height: 44px;
-  border: 1px solid rgba(0,102,255,0.3);
+.step-n {
+  width: 40px; height: 40px; border: 1px solid rgba(0,102,255,0.3);
   display: flex; align-items: center; justify-content: center;
-  font-family: 'Fraunces', serif;
-  font-size: 18px;
-  color: var(--blue);
-  flex-shrink: 0;
-  background: rgba(0,102,255,0.04);
+  font-family: 'Fraunces', serif; font-size: 16px; color: var(--blue); flex-shrink: 0;
 }
-
-.step h4 { font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 5px; letter-spacing: 0.3px; }
+.step h4 { font-size: 13px; font-weight: 600; color: var(--white); margin-bottom: 4px; }
 .step p { font-size: 12px; color: var(--muted); line-height: 1.7; }
-
-/* ── CTA ── */
-.cta-section {
-  background: linear-gradient(135deg, rgba(0,102,255,0.08), rgba(0,200,255,0.04));
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
-}
-
-.cta-box {
-  border: 1px solid rgba(0,102,255,0.2);
-  padding: 56px;
-  text-align: center;
-  max-width: 680px;
-  margin: 0 auto;
-}
-
-.cta-box h2 {
-  font-family: 'Fraunces', serif;
-  font-size: 36px;
-  font-weight: 300;
-  color: var(--white);
-  margin-bottom: 16px;
-  line-height: 1.3;
-}
-
-.cta-box p { font-size: 14px; color: var(--muted); line-height: 1.8; margin-bottom: 32px; }
-
-.for-who {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  flex-wrap: wrap;
-}
-
-.for-badge {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  border: 1px solid var(--border);
-  font-size: 12px;
-  color: var(--text);
-}
-
-.for-badge::before {
-  content: '';
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--blue);
-  box-shadow: 0 0 8px var(--blue);
-}
 
 /* ── FOOTER ── */
 footer {
-  padding: 36px 8%;
-  border-top: 1px solid var(--border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  position: relative;
-  z-index: 1;
+  padding: 36px 8%; border-top: 1px solid var(--border);
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 12px; position: relative; z-index: 1;
 }
 footer p { font-size: 11px; color: var(--muted); letter-spacing: 1px; }
 footer strong { color: var(--blue); }
 
 /* ── ANIMATIONS ── */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.reveal {
-  opacity: 0; transform: translateY(28px);
-  transition: opacity 0.6s, transform 0.6s;
-}
+@keyframes fadeUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s, transform 0.6s; }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 <body>
-
 <div class="grid-bg"></div>
 
 <!-- HERO -->
 <section class="hero">
   <div class="hero-glow"></div>
-
   <nav>
     <div class="logo">Bravy</div>
-    <div class="nav-badge">Proposta ONR · Maio 2026</div>
+    <div class="nav-badge">ONR · Comunicação & Marketing · Maio 2026</div>
   </nav>
 
   <div class="hero-content">
     <div class="hero-label">
       <div class="label-line"></div>
-      <span class="label-text">Para Fábio & Fabrício · Time de Dados & IA</span>
+      <span class="label-text">Para Fábio · Setor de Comunicação & Marketing</span>
     </div>
-
-    <h1>
-      O time que moderniza<br>
-      os cartórios do Brasil<br>
-      <em>merece as melhores ferramentas.</em>
-    </h1>
-
+    <h1>O que hoje leva dias,<br><em>passa a levar minutos.</em></h1>
     <p class="hero-desc">
-      Vocês já estão na vanguarda — IA de leitura de matrículas, soluções para reduzir o abismo entre cartórios grandes e pequenos. Com Claude Code, o time de Dados & IA do ONR pode acelerar ainda mais esse processo.
+      A Infographya faz um trabalho sólido. Mas há processos no setor de Comunicação & Marketing do ONR que ainda dependem muito de tempo humano, aprovações demoradas e execução manual. Com agentes de IA, isso muda.
     </p>
-
-    <div class="hero-onr">
-      <div class="onr-icon">🏛️</div>
-      <div class="onr-info">
-        <div class="onr-label">Empregador</div>
-        <div class="onr-name">ONR — Operador Nacional do Registro de Imóveis</div>
-        <div class="onr-sub">onr.org.br · Brasília, DF · Escritório em Pinheiros, SP</div>
-      </div>
+    <div class="scope-box">
+      <div class="scope-dot"></div>
+      <div class="scope-text">Escopo exclusivo: <strong style="color:#00FF88">Setor de Comunicação & Marketing do ONR</strong><br>Sem conflito com o time de Dados & IA</div>
     </div>
   </div>
 
   <div class="hero-bottom">
-    <div class="hero-stat">
-      <div class="hero-stat-num">6k+</div>
-      <div class="hero-stat-label">Cartórios no Brasil</div>
+    <div>
+      <div class="h-stat-num">7</div>
+      <div class="h-stat-label">Frentes automatizáveis</div>
     </div>
-    <div class="hero-stat">
-      <div class="hero-stat-num">1</div>
-      <div class="hero-stat-label">Time de IA pra modernizar tudo</div>
+    <div>
+      <div class="h-stat-num">~80%</div>
+      <div class="h-stat-label">Tarefas repetitivas eliminadas</div>
     </div>
-    <div class="hero-stat">
-      <div class="hero-stat-num">∞</div>
-      <div class="hero-stat-label">Escala com Claude Code</div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTEXTO -->
-<section class="context">
-  <div class="s-tag reveal">Contexto</div>
-  <h2 class="s-title reveal">O que o time de<br><em>Dados & IA do ONR já faz</em></h2>
-
-  <div class="context-grid">
-    <div class="ctx-card reveal">
-      <div class="ctx-icon">📄</div>
-      <div class="ctx-title">Leitura Estruturada de Matrículas</div>
-      <div class="ctx-text">IA que lê matrículas de imóveis, separa automaticamente dados reais do imóvel de dados pessoais do proprietário. Processo que antes era 100% manual.</div>
-    </div>
-    <div class="ctx-card reveal">
-      <div class="ctx-icon">📣</div>
-      <div class="ctx-title">Soluções para Comunicação & Marketing</div>
-      <div class="ctx-text">IA já funcionando no setor de Comunicação & Marketing do ONR — prova de que o modelo funciona e pode se expandir para outros setores.</div>
-    </div>
-    <div class="ctx-card reveal">
-      <div class="ctx-icon">🗺️</div>
-      <div class="ctx-title">Modernização Nacional</div>
-      <div class="ctx-text">Missão de reduzir o abismo tecnológico entre cartórios dos grandes centros e os do interior. O Brasil é continental — o problema é enorme.</div>
+    <div>
+      <div class="h-stat-num">24/7</div>
+      <div class="h-stat-label">Produção sem parar</div>
     </div>
   </div>
 </section>
 
-<!-- O QUE PODEM CRIAR -->
+<!-- HOJE VS AMANHÃ -->
+<section class="compare">
+  <div class="s-tag reveal">Diagnóstico</div>
+  <h2 class="s-title reveal">O que o setor faz hoje —<br><em>e como vai funcionar com IA</em></h2>
+
+  <div class="compare-grid">
+    <div class="compare-col reveal">
+      <div class="compare-col-title hoje">Como é hoje</div>
+      <div class="compare-item">
+        <div class="ci-icon">✍️</div>
+        <div class="ci-content">
+          <div class="ci-tag manual">Manual</div>
+          <div class="ci-title">Produção de conteúdo</div>
+          <div class="ci-sub">Redatores criam posts, textos e pautas manualmente. Processo lento, sujeito a retrabalho e dependente de disponibilidade humana.</div>
+        </div>
+      </div>
+      <div class="compare-item">
+        <div class="ci-icon">📰</div>
+        <div class="ci-content">
+          <div class="ci-tag manual">Manual</div>
+          <div class="ci-title">Press releases e assessoria</div>
+          <div class="ci-sub">Cada comunicado exige briefing, redação, revisão e aprovação — dias de trabalho para um único release.</div>
+        </div>
+      </div>
+      <div class="compare-item">
+        <div class="ci-icon">📊</div>
+        <div class="ci-content">
+          <div class="ci-tag manual">Manual</div>
+          <div class="ci-title">Relatórios de métricas</div>
+          <div class="ci-sub">Dashboards montados manualmente, consolidando dados de múltiplas plataformas. Trabalho repetitivo toda semana.</div>
+        </div>
+      </div>
+      <div class="compare-item">
+        <div class="ci-icon">📧</div>
+        <div class="ci-content">
+          <div class="ci-tag manual">Manual</div>
+          <div class="ci-title">E-mail marketing</div>
+          <div class="ci-sub">Criação, segmentação e envio dependem de equipe. Personalização em escala é inviável manualmente.</div>
+        </div>
+      </div>
+      <div class="compare-item">
+        <div class="ci-icon">📅</div>
+        <div class="ci-content">
+          <div class="ci-tag manual">Manual</div>
+          <div class="ci-title">Calendário editorial</div>
+          <div class="ci-sub">Planejamento mensal de pauta feito em reuniões, planilhas e aprovações que consomem horas da equipe.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="compare-arrow">→</div>
+
+    <div class="compare-col reveal">
+      <div class="compare-col-title amanha">Com agentes de IA</div>
+      <div class="compare-item">
+        <div class="ci-icon">🤖</div>
+        <div class="ci-content">
+          <div class="ci-tag auto">Automático</div>
+          <div class="ci-title">Conteúdo gerado e aprovado</div>
+          <div class="ci-sub">Agente cria posts, adapta para cada rede social, aplica a voz da marca e entrega pronto para aprovação em minutos.</div>
+        </div>
+      </div>
+      <div class="compare-item">
+        <div class="ci-icon">⚡</div>
+        <div class="ci-content">
+          <div class="ci-tag auto">Automático</div>
+          <div class="ci-title">Releases gerados em minutos</div>
+          <div class="ci-sub">Agente recebe o briefing, gera o release no padrão do ONR, adapta para diferentes veículos e envia para aprovação.</div>
+        </div>
+      </div>
+      <div class="compare-item">
+        <div class="ci-icon">📈</div>
+        <div class="ci-content">
+          <div class="ci-tag auto">Automático</div>
+          <div class="ci-title">Relatórios gerados automaticamente</div>
+          <div class="ci-sub">Agente consolida dados de todas as plataformas, gera análise e envia relatório toda segunda-feira de manhã.</div>
+        </div>
+      </div>
+      <div class="compare-item">
+        <div class="ci-icon">🎯</div>
+        <div class="ci-content">
+          <div class="ci-tag auto">Automático</div>
+          <div class="ci-title">E-mails personalizados em escala</div>
+          <div class="ci-sub">Agente segmenta a base, personaliza cada mensagem e dispara automaticamente no momento certo.</div>
+        </div>
+      </div>
+      <div class="compare-item">
+        <div class="ci-icon">🗓️</div>
+        <div class="ci-content">
+          <div class="ci-tag auto">Automático</div>
+          <div class="ci-title">Pauta gerada com antecedência</div>
+          <div class="ci-sub">Agente analisa tendências, datas relevantes e histórico para sugerir o calendário editorial do mês automaticamente.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AGENTES -->
 <section>
-  <div class="s-tag reveal">Com Claude Code</div>
-  <h2 class="s-title reveal">O que o time pode<br><em>construir e acelerar</em></h2>
+  <div class="s-tag reveal">Os Agentes</div>
+  <h2 class="s-title reveal">O que será construído<br><em>para o setor de C&M do ONR</em></h2>
 
-  <div class="uso-grid">
-    <div class="uso-card reveal">
-      <div class="uso-num">01</div>
-      <div class="uso-tag">Documentação Cartorial</div>
-      <div class="uso-title">Agentes de Leitura e Extração de Documentos</div>
-      <div class="uso-text">Evoluir a IA de matrícula atual — extraindo, estruturando e validando qualquer tipo de documento cartorial de forma autônoma e escalável.</div>
-      <ul class="uso-features">
-        <li>Leitura de matrículas, escrituras e certidões</li>
-        <li>Extração automática de dados estruturados</li>
-        <li>Validação e cruzamento com bases públicas</li>
-        <li>Identificação de inconsistências e alertas</li>
-        <li>Pipeline de processamento em lote para milhares de documentos</li>
+  <div class="agent-grid">
+    <div class="agent-card reveal">
+      <div class="agent-substitui">Substitui / complementa: <span>Produção de conteúdo Infographya</span></div>
+      <div class="agent-num">01</div>
+      <div class="agent-title">Agente de Produção de Conteúdo</div>
+      <div class="agent-desc">Cria posts, textos e materiais editoriais no padrão de voz do ONR — para todas as plataformas, em escala, sem perder consistência.</div>
+      <ul class="agent-features">
+        <li>Geração de posts para Instagram, LinkedIn e Facebook com a identidade do ONR</li>
+        <li>Adaptação automática de um conteúdo para múltiplos formatos</li>
+        <li>Criação de pautas e roteiros para vídeos institucionais</li>
+        <li>Revisão e adequação de tom conforme canal</li>
       </ul>
+      <div class="agent-tempo">
+        <span class="tempo-label">Tempo economizado</span>
+        <span class="tempo-val">~15h/semana</span>
+      </div>
     </div>
 
-    <div class="uso-card reveal">
-      <div class="uso-num">02</div>
-      <div class="uso-tag">Padronização</div>
-      <div class="uso-title">Agente de Padronização entre Cartórios</div>
-      <div class="uso-text">Cada cartório tem suas particularidades — formatos diferentes, linguagens diferentes. Um agente que normaliza e padroniza dados entre todos os cartórios do BR.</div>
-      <ul class="uso-features">
-        <li>Normalização de formatos de documentos</li>
-        <li>Tradução entre padrões regionais de registro</li>
-        <li>Unificação de bases de dados cartoriais</li>
-        <li>Relatórios comparativos entre cartórios</li>
-        <li>Identificação de boas práticas para replicação</li>
+    <div class="agent-card reveal">
+      <div class="agent-substitui">Substitui / complementa: <span>Assessoria de Imprensa Infographya</span></div>
+      <div class="agent-num">02</div>
+      <div class="agent-title">Agente de Assessoria de Imprensa</div>
+      <div class="agent-desc">Gera press releases, sugestões de pauta e materiais para veículos de comunicação — no padrão jornalístico, em minutos.</div>
+      <ul class="agent-features">
+        <li>Geração de press releases a partir de briefing simples</li>
+        <li>Adaptação do texto para diferentes perfis de veículo</li>
+        <li>Sugestão de pautas baseada em agenda e contexto do setor</li>
+        <li>Monitoramento de menções ao ONR na imprensa</li>
       </ul>
+      <div class="agent-tempo">
+        <span class="tempo-label">Tempo economizado</span>
+        <span class="tempo-val">~10h/semana</span>
+      </div>
     </div>
 
-    <div class="uso-card reveal">
-      <div class="uso-num">03</div>
-      <div class="uso-tag">Atendimento</div>
-      <div class="uso-title">Agente de Suporte aos Cartórios</div>
-      <div class="uso-text">Um agente técnico que suporta os cartórios do interior — respondendo dúvidas, guiando processos e garantindo que a modernização chegue onde mais precisa.</div>
-      <ul class="uso-features">
-        <li>Suporte técnico automatizado 24/7 para cartórios</li>
-        <li>Guia de implementação das soluções ONR</li>
-        <li>Treinamento assistido por IA para equipes cartoriais</li>
-        <li>Base de conhecimento jurídico e registral</li>
-        <li>Escalonamento inteligente de casos complexos</li>
+    <div class="agent-card reveal">
+      <div class="agent-substitui">Substitui / complementa: <span>Dashboards e relatórios Infographya</span></div>
+      <div class="agent-num">03</div>
+      <div class="agent-title">Agente de Métricas e Relatórios</div>
+      <div class="agent-desc">Consolida dados de todas as plataformas de marketing, gera análises e relatórios automáticos com insights acionáveis.</div>
+      <ul class="agent-features">
+        <li>Consolidação automática de dados de redes sociais, site e e-mail</li>
+        <li>Relatório semanal gerado e enviado automaticamente</li>
+        <li>Identificação de tendências e queda de performance</li>
+        <li>Sugestões de otimização baseadas nos dados</li>
       </ul>
+      <div class="agent-tempo">
+        <span class="tempo-label">Tempo economizado</span>
+        <span class="tempo-val">~8h/semana</span>
+      </div>
     </div>
 
-    <div class="uso-card reveal">
-      <div class="uso-num">04</div>
-      <div class="uso-tag">Desenvolvimento</div>
-      <div class="uso-title">Aceleração do Próprio Time de IA</div>
-      <div class="uso-text">Claude Code como copiloto do time de Dados & IA — acelerando o desenvolvimento, testando hipóteses mais rápido e documentando soluções automaticamente.</div>
-      <ul class="uso-features">
-        <li>Geração e revisão de código com contexto específico do ONR</li>
-        <li>Automação de testes e validação de modelos</li>
-        <li>Documentação técnica automática de soluções</li>
-        <li>Prototipagem rápida de novos agentes</li>
-        <li>Integração com pipelines de dados já existentes</li>
+    <div class="agent-card reveal">
+      <div class="agent-substitui">Substitui / complementa: <span>E-mail marketing Infographya</span></div>
+      <div class="agent-num">04</div>
+      <div class="agent-title">Agente de E-mail Marketing</div>
+      <div class="agent-desc">Segmenta a base, personaliza cada comunicação e dispara campanhas automaticamente — com a voz e identidade do ONR.</div>
+      <ul class="agent-features">
+        <li>Segmentação automática da base por perfil e comportamento</li>
+        <li>Personalização de conteúdo por segmento</li>
+        <li>Disparo automatizado no melhor horário</li>
+        <li>Análise de abertura, clique e conversão com sugestões</li>
       </ul>
+      <div class="agent-tempo">
+        <span class="tempo-label">Tempo economizado</span>
+        <span class="tempo-val">~6h/semana</span>
+      </div>
     </div>
 
-    <div class="uso-card reveal">
-      <div class="uso-num">05</div>
-      <div class="uso-tag">Compliance & Jurídico</div>
-      <div class="uso-title">Agente de Compliance Registral</div>
-      <div class="uso-text">Verificação automática de conformidade dos registros com a legislação — identificando irregularidades antes que virem problemas.</div>
-      <ul class="uso-features">
-        <li>Verificação automática de conformidade legal</li>
-        <li>Análise de risco em registros de imóveis</li>
-        <li>Alertas de irregularidades e pendências</li>
-        <li>Rastreabilidade completa de alterações</li>
-        <li>Relatórios para órgãos reguladores</li>
+    <div class="agent-card reveal">
+      <div class="agent-substitui">Substitui / complementa: <span>Planejamento editorial Infographya</span></div>
+      <div class="agent-num">05</div>
+      <div class="agent-title">Agente de Calendário Editorial</div>
+      <div class="agent-desc">Planeja o calendário de conteúdo do mês automaticamente — levando em conta datas relevantes, agenda do ONR e tendências do setor.</div>
+      <ul class="agent-features">
+        <li>Sugestão de pauta mensal baseada em contexto e histórico</li>
+        <li>Identificação de datas e eventos relevantes para o setor</li>
+        <li>Distribuição de conteúdo por canal e frequência ideal</li>
+        <li>Ajuste dinâmico conforme performance dos conteúdos anteriores</li>
       </ul>
+      <div class="agent-tempo">
+        <span class="tempo-label">Tempo economizado</span>
+        <span class="tempo-val">~5h/semana</span>
+      </div>
     </div>
 
-    <div class="uso-card reveal">
-      <div class="uso-num">06</div>
-      <div class="uso-tag">Inteligência de Dados</div>
-      <div class="uso-title">Agente de Inteligência do Mercado Imobiliário</div>
-      <div class="uso-text">Com acesso a dados de todos os cartórios do BR, o ONR tem uma visão única do mercado imobiliário nacional. Um agente que transforma esses dados em inteligência.</div>
-      <ul class="uso-features">
-        <li>Análise de tendências do mercado imobiliário por região</li>
-        <li>Mapeamento de concentração de propriedades</li>
-        <li>Relatórios para políticas públicas e governo</li>
-        <li>Detecção de padrões suspeitos e fraudes</li>
-        <li>Dashboards em tempo real para tomada de decisão</li>
+    <div class="agent-card reveal">
+      <div class="agent-substitui">Substitui / complementa: <span>Comunicação Interna</span></div>
+      <div class="agent-num">06</div>
+      <div class="agent-title">Agente de Comunicação Interna</div>
+      <div class="agent-desc">Automatiza a comunicação interna do ONR — informativos, comunicados e boletins gerados e distribuídos automaticamente.</div>
+      <ul class="agent-features">
+        <li>Geração de informativos internos a partir de pautas</li>
+        <li>Distribuição segmentada por área e nível hierárquico</li>
+        <li>Registro e organização do histórico de comunicados</li>
+        <li>Lembretes e alertas automáticos para datas importantes</li>
       </ul>
-    </div>
-  </div>
-</section>
-
-<!-- DIFERENCIAL -->
-<section class="dif">
-  <div class="s-tag reveal">Por que Claude Code</div>
-  <h2 class="s-title reveal">O que muda pra um time <em>técnico como o de vocês</em></h2>
-
-  <div class="dif-grid">
-    <div class="dif-left reveal">
-      <p>Vocês já desenvolvem IA internamente. Já têm a mentalidade certa. O que Claude Code adiciona não é a base — é a velocidade e a profundidade que faltam nas ferramentas que existem hoje.</p>
-      <p>Um time que já sabe o que quer construir, com Claude Code, passa a construir muito mais rápido — e com agentes muito mais autônomos do que os modelos convencionais permitem.</p>
-      <p>A diferença é especialmente relevante pra casos de uso complexos como os do ONR: documentos com variações regionais, legislação específica, bases de dados não padronizadas. Claude Code foi feito pra isso.</p>
-    </div>
-
-    <div class="reveal">
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th>Capacidade</th>
-            <th>Outros modelos</th>
-            <th>Claude Code</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Contexto longo de documentos</td>
-            <td style="color:#3A5068">Limitado</td>
-            <td>200k tokens</td>
-          </tr>
-          <tr>
-            <td>Agentes autônomos</td>
-            <td style="color:#3A5068">Básico</td>
-            <td>Avançado</td>
-          </tr>
-          <tr>
-            <td>Raciocínio jurídico/técnico</td>
-            <td style="color:#3A5068">Genérico</td>
-            <td>Especializado</td>
-          </tr>
-          <tr>
-            <td>Integração com pipelines</td>
-            <td style="color:#3A5068">Manual</td>
-            <td>Nativo</td>
-          </tr>
-          <tr>
-            <td>Manuseio de documentos</td>
-            <td style="color:#3A5068">Básico</td>
-            <td>Estruturado</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="agent-tempo">
+        <span class="tempo-label">Tempo economizado</span>
+        <span class="tempo-val">~4h/semana</span>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- IMPACTO -->
-<section>
-  <div class="s-tag reveal">Impacto Esperado</div>
-  <h2 class="s-title reveal">O que muda na <em>operação do ONR</em></h2>
+<section class="impact">
+  <div class="s-tag reveal">Impacto Total</div>
+  <h2 class="s-title reveal">O que muda no setor<br><em>de C&M do ONR</em></h2>
 
-  <div class="impacto-grid">
+  <div class="impact-grid">
     <div class="imp-card reveal">
-      <div class="imp-num">10x</div>
-      <div class="imp-label">Velocidade de desenvolvimento<br>de novas soluções</div>
+      <div class="imp-num">48h</div>
+      <div class="imp-label">Economizadas por semana<br>em tarefas repetitivas</div>
     </div>
     <div class="imp-card reveal">
-      <div class="imp-num">6k+</div>
-      <div class="imp-label">Cartórios que podem ser<br>impactados pelas soluções</div>
+      <div class="imp-num">6x</div>
+      <div class="imp-label">Mais velocidade na<br>produção de conteúdo</div>
+    </div>
+    <div class="imp-card reveal">
+      <div class="imp-num">100%</div>
+      <div class="imp-label">Consistência de voz<br>em todos os canais</div>
     </div>
     <div class="imp-card reveal">
       <div class="imp-num">0</div>
-      <div class="imp-label">Dependência de fornecedor<br>após a mentoria</div>
-    </div>
-    <div class="imp-card reveal">
-      <div class="imp-num">∞</div>
-      <div class="imp-label">Escalabilidade das soluções<br>para todo o Brasil</div>
+      <div class="imp-label">Relatórios montados<br>manualmente</div>
     </div>
   </div>
 </section>
 
 <!-- MENTORIA -->
-<section class="dif">
-  <div class="s-tag reveal">A Mentoria</div>
-  <h2 class="s-title reveal">Como o time do ONR<br><em>aprende com a Bravy</em></h2>
+<section class="mentoria">
+  <div class="s-tag reveal">Como Funciona</div>
+  <h2 class="s-title reveal">A Mentoria Bravy<br><em>para o time do ONR</em></h2>
 
-  <div class="steps-list">
-    <div class="step reveal">
-      <div class="step-num">1</div>
-      <div>
-        <h4>Diagnóstico Técnico do Time</h4>
-        <p>Mapeamos o que vocês já têm, as ferramentas que usam, os projetos em andamento e onde Claude Code pode gerar mais impacto imediato.</p>
+  <div class="ment-grid">
+    <div class="ment-left reveal">
+      <p>Na mentoria, o time de Comunicação & Marketing do ONR aprende a construir cada um desses agentes com Claude Code — saindo com autonomia total para ajustar, evoluir e criar novos agentes sem depender de ninguém.</p>
+      <p>Trabalhamos com estruturas base já validadas que são adaptadas para a realidade do ONR — o tom institucional, os processos específicos do setor, a linguagem do segmento extrajudicial.</p>
+      <div class="highlight">
+        <p>Ao final, a pessoa que participar da mentoria sai sabendo construir qualquer agente de comunicação — sem precisar de fornecedor externo para cada nova automação.</p>
       </div>
     </div>
-    <div class="step reveal">
-      <div class="step-num">2</div>
-      <div>
-        <h4>Claude Code Aplicado ao Contexto do ONR</h4>
-        <p>Sem teoria genérica — aprendemos Claude Code resolvendo problemas reais do ONR: documentos cartoriais, pipelines de dados, agentes específicos para o setor.</p>
-      </div>
-    </div>
-    <div class="step reveal">
-      <div class="step-num">3</div>
-      <div>
-        <h4>Construção dos Primeiros Agentes</h4>
-        <p>O time constrói os primeiros agentes durante a mentoria — já com casos de uso reais do ONR sendo resolvidos em tempo real.</p>
-      </div>
-    </div>
-    <div class="step reveal">
-      <div class="step-num">4</div>
-      <div>
-        <h4>Autonomia Total</h4>
-        <p>O time sai com o conhecimento para construir, evoluir e escalar qualquer solução com Claude Code — sem depender da Bravy ou de qualquer outro fornecedor.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- CTA -->
-<section class="cta-section">
-  <div class="cta-box reveal">
-    <h2>Para quem é essa mentoria</h2>
-    <p>A mentoria é desenhada para times técnicos que já desenvolvem soluções de IA e querem adicionar Claude Code ao arsenal — saindo com autonomia total para construir e escalar.</p>
-    <div class="for-who">
-      <div class="for-badge">Fábio</div>
-      <div class="for-badge">Fabrício</div>
-      <div class="for-badge">Time de Dados & IA do ONR</div>
+    <div class="steps reveal">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div>
+          <h4>Mapeamento dos Processos</h4>
+          <p>Entendemos como funciona hoje o setor de C&M do ONR e definimos quais agentes geram mais impacto imediato.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div>
+          <h4>Claude Code na Prática</h4>
+          <p>Aprendemos construindo — cada conceito é aplicado diretamente em agentes reais para o ONR.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div>
+          <h4>Agentes em Produção</h4>
+          <p>Os agentes são construídos, testados com dados reais do ONR e validados antes de entrar em operação.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">4</div>
+        <div>
+          <h4>Setor de C&M Autônomo</h4>
+          <p>Time produzindo mais, mais rápido, com consistência — e com autonomia para continuar evoluindo.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <p>Preparado por <strong>Bravy</strong> para Fábio & Fabrício · ONR · Maio 2026</p>
+  <p>Preparado por <strong>Bravy</strong> para Fábio · ONR · Comunicação & Marketing · Maio 2026</p>
   <p>Proposta <strong>confidencial</strong> · Válida por 7 dias</p>
 </footer>
 
